@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: alexandr.fedorov
+      changes:
+        - sqlFile:
+            path: \db\changelog\change_sets\create_table_department.sql
+  - changeSet:
+      id: 2
+      author: alexandr.fedorov
+      changes:
+        - sqlFile:
+            path: \db\changelog\change_sets\create_table_employee.sql
+  - changeSet:
+      id: 3
+      author: alexandr.fedorov
+      changes:
+        - sqlFile:
+            path: \db\changelog\change_sets\alter_table_department_add_chief_id.sql
