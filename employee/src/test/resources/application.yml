@@ -1,11 +1,7 @@
 spring:
   datasource:
-    url: jdbc:h2:mem:testDB
-    username: sa
-    password: password
-    driverClassName: org.h2.Driver
-  jpa:
-    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
-    show-sql: true
-    hibernate:
-      ddl-auto: create-drop
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: admin
+  liquibase:
+    change-log: classpath:db/changelog/master.yaml

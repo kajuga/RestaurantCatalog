@@ -10,7 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.io.IOException;
 import java.util.List;
 
-@SpringBootTest
+@SpringBootTest(classes = ValidationUtils.class)
 public class ValidationTest {
     private static final String BASE_PATH = "json/";
     private static final String EMPLOYEE_PATH = BASE_PATH + "employee.json";
