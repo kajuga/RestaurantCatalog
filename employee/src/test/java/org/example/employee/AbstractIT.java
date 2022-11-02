@@ -21,7 +21,6 @@ import javax.sql.DataSource;
 @ActiveProfiles("it-test")
 public class AbstractIT {
 
-
     @Container
     public static PostgreSQLContainer<?> postgreSQLContainer = new PostgreSQLContainer<>("postgres:14.3")
             .withDatabaseName("postgres")
@@ -43,10 +42,6 @@ public class AbstractIT {
                     .password(postgreSQLContainer.getPassword())
                     .username(postgreSQLContainer.getUsername())
                     .build();
-
-
         }
     }
-
-
 }

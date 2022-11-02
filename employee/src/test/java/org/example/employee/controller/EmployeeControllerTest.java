@@ -15,6 +15,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
+import org.testcontainers.shaded.org.bouncycastle.util.encoders.UTF8;
 
 import java.nio.charset.StandardCharsets;
 import java.util.List;
@@ -50,6 +51,7 @@ public class EmployeeControllerTest {
 
     @Test
     void getEmployeeByIdSuccessTest() throws Exception {
+
         final EmployeeResponseDTO response =
                 TestUtil.readJsonResource(RESPONSE_GET_1, EmployeeResponseDTO.class);
         final String expected = TestUtil.write(response);
@@ -60,6 +62,7 @@ public class EmployeeControllerTest {
 
         this.mockMvc
                 .perform(get("/employees/{id}", 2L))
+
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
